@@ -1,7 +1,8 @@
 import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
 import { PersonRecord, DepartmentRecord } from 'types'
-import BaseLayout from '../../layouts/base'
+import BaseLayout from '@layouts/base'
+import Text from '@components/text'
 import style from './style.module.css'
 import query from './query.graphql'
 
@@ -16,9 +17,13 @@ export default function PeoplePage({
 }: Props): React.ReactElement {
   return (
     <main className="g-grid-container">
-      <h2>People Data</h2>
+      <Text _as="h2" variant="headingBold" color="accordionGray">
+        People Data
+      </Text>
       <pre className={style.myData}>{JSON.stringify(allPeople, null, 2)}</pre>
-      <h2>Departments Data</h2>
+      <Text _as="h2" variant="headingBold">
+        Departments Data
+      </Text>
       <pre className={style.myData}>
         {JSON.stringify(allDepartments, null, 2)}
       </pre>

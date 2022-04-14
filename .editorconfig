@@ -12,4 +12,4 @@ indent_style = space
 indent_size = 2
 
 [{*.md,*.json}]
-max_line_length = null
+max_line_length = off

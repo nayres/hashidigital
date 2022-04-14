@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, ReactElement } from 'react'
 import { AppProps } from 'next/app'
 import './style.css'
 import '@hashicorp/platform-util/nprogress/style.css'
@@ -8,7 +8,7 @@ import Router from 'next/router'
 
 NProgress({ Router })
 
-const EmptyLayout = ({ children }) => children
+const EmptyLayout: FC = ({ children }) => <>children</>
 
 interface HashiAppProps extends AppProps {
   Component: AppProps['Component'] & { layout?: React.ComponentType }
