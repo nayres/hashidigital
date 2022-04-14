@@ -43,7 +43,11 @@ const Text: FC<TextProps> = ({
 }) => {
   const getClassNames = makeClassName(styles)
   return (
-    <_as className={getClassNames(variant, color, className)}>{children}</_as>
+    <_as
+      className={`${getClassNames(variant)} ${getClassNames(color, className)}`}
+    >
+      {children}
+    </_as>
   )
 }
 

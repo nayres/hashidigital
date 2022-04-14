@@ -17,7 +17,7 @@ export default function PeoplePage({
 }: Props): React.ReactElement {
   return (
     <main className="g-grid-container">
-      <Text _as="h2" variant="headingBold">
+      <Text _as="h2" variant="headingBold" color="accordionGray">
         People Data
       </Text>
       <pre className={style.myData}>{JSON.stringify(allPeople, null, 2)}</pre>
