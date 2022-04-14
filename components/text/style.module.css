@@ -1,0 +1,45 @@
+/* design tokens - from figma */
+.headingBold {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 28px;
+}
+
+.headingLight {
+  font-size: 1rem;
+  font-weight: var(--font-weight-reg);
+  line-height: 28px;
+}
+
+.body {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-reg);
+  line-height: 28px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-reg);
+  line-height: 24px;
+}
+
+/* color compositions - from figma */
+.black {
+  color: var(--black);
+}
+
+.accordionGray {
+  color: #484848;
+}
+
+.inputGray {
+  color: #989cac;
+}
+
+.gray3 {
+  color: var(--gray-3);
+}
+
+.gray4 {
+  color: var(--gray-4);
+}

@@ -4,6 +4,7 @@ import { PersonRecord, DepartmentRecord } from 'types'
 import BaseLayout from '../../layouts/base'
 import style from './style.module.css'
 import query from './query.graphql'
+import Text from '../../components/text'
 
 interface Props {
   allPeople: PersonRecord[]
@@ -16,7 +17,9 @@ export default function PeoplePage({
 }: Props): React.ReactElement {
   return (
     <main className="g-grid-container">
-      <h2>People Data</h2>
+      <Text _as="h1" variant="headingBold" color="gray3">
+        People Data
+      </Text>
       <pre className={style.myData}>{JSON.stringify(allPeople, null, 2)}</pre>
       <h2>Departments Data</h2>
       <pre className={style.myData}>
