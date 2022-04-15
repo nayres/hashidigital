@@ -1,0 +1,8 @@
+.resultsBase {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.resultsScrollable {
+  overflow-y: auto;
+}

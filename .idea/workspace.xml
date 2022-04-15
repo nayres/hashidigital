@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="VStack component added - some utils to power behavior">
-      <change afterPath="$PROJECT_DIR$/compositions/sidebar/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositions/results/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositions/results/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/box/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/box/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/text/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/text/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/text/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/text/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/people/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +21,15 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pages/people/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/vStack/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/utils.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/button/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/box/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/hStack/index.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/text/index.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
