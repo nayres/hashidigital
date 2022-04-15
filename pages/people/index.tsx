@@ -1,3 +1,4 @@
+import React from 'react'
 import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
 import { PersonRecord, DepartmentRecord } from 'types'
@@ -7,6 +8,7 @@ import Box from 'components/box'
 import HStack from 'components/hStack'
 import VStack from 'components/vStack'
 import Sidebar from 'compositions/sidebar'
+import Results from 'compositions/results'
 import style from './style.module.css'
 import query from './query.graphql'
 
@@ -20,13 +22,16 @@ export default function PeoplePage({
   allDepartments,
 }: Props): React.ReactElement {
   return (
-    <Box _as="main" className="g-grid-container">
+    <Box className="g-grid-container">
       <HStack>
-        <Sidebar width="50%" height="100vh">
+        <Sidebar width="33.333%" height="100vh">
           Hello
         </Sidebar>
-        <Box background="yellow" padding="2rem">
-          <VStack align="center" spacing="2rem">
+        <Results>
+          <VStack align="top" spacing="1rem">
+            <Text _as="p" variant="headingBold">
+              People Data
+            </Text>
             <pre className={style.myData}>
               {JSON.stringify(allPeople, null, 2)}
             </pre>
@@ -37,7 +42,7 @@ export default function PeoplePage({
               {JSON.stringify(allDepartments, null, 2)}
             </pre>
           </VStack>
-        </Box>
+        </Results>
       </HStack>
     </Box>
   )
