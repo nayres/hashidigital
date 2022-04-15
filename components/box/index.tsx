@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { makeClassName } from '../utils'
+import { makeClassName } from 'components/utils'
 import styles from './style.module.css'
 
 type SemanticElements =
@@ -17,7 +17,7 @@ type SemanticElements =
   | 'figure'
   | 'time'
 
-export interface BoxProps {
+interface BoxProps {
   /* @as: semantic element alias - 'article' | 'aside' | 'details' | 'main' | 'header' | etc */
   _as?: SemanticElements | 'div'
   /* @className: consumer can compose a className */
