@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { makeClassName } from '../utils'
+import { makeClassName } from 'components/utils'
 import styles from './style.module.css'
 
 type SemanticText =
