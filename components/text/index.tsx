@@ -23,7 +23,7 @@ type SemanticText =
   | 'pre'
   | 'ul'
 
-export interface TextProps {
+interface TextProps {
   /* @variant: typography variant - 'headingBold' | 'headingLight' | 'body' | 'label' */
   variant?: 'headingBold' | 'headingLight' | 'body' | 'label'
   /* @color: typography color - 'black' | 'gray3' | 'gray4' | 'accordionGray' | 'inputGray' */

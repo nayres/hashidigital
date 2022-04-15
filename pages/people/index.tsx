@@ -6,6 +6,7 @@ import Text from 'components/text'
 import Box from 'components/box'
 import HStack from 'components/hStack'
 import VStack from 'components/vStack'
+import Sidebar from 'compositions/sidebar'
 import style from './style.module.css'
 import query from './query.graphql'
 
@@ -19,43 +20,26 @@ export default function PeoplePage({
   allDepartments,
 }: Props): React.ReactElement {
   return (
-    <main className="g-grid-container">
-      <Box padding="2rem">
-        <HStack spacing="1rem">
-          <VStack spacing="1rem">
-            <Box _as="section" border="1px solid lightBlue" padding="2rem">
-              <Text _as="h2" variant="headingBold" color="accordionGray">
-                People Data
-              </Text>
-            </Box>
-            <Box _as="section" border="1px solid lightBlue" padding="2rem">
-              <Text _as="h2" variant="headingBold" color="accordionGray">
-                People Data
-              </Text>
-            </Box>
+    <Box _as="main" className="g-grid-container">
+      <HStack>
+        <Sidebar width="50%" height="100vh">
+          Hello
+        </Sidebar>
+        <Box background="yellow" padding="2rem">
+          <VStack align="center" spacing="2rem">
+            <pre className={style.myData}>
+              {JSON.stringify(allPeople, null, 2)}
+            </pre>
+            <Text _as="h2" variant="headingBold">
+              Departments Data
+            </Text>
+            <pre className={style.myData}>
+              {JSON.stringify(allDepartments, null, 2)}
+            </pre>
           </VStack>
-          <VStack spacing="1rem">
-            <Box _as="section" border="1px solid lightBlue" padding="2rem">
-              <Text _as="h2" variant="headingBold" color="accordionGray">
-                People Data
-              </Text>
-            </Box>
-            <Box _as="section" border="1px solid lightBlue" padding="2rem">
-              <Text _as="h2" variant="headingBold" color="accordionGray">
-                People Data
-              </Text>
-            </Box>
-          </VStack>
-        </HStack>
-      </Box>
-      <pre className={style.myData}>{JSON.stringify(allPeople, null, 2)}</pre>
-      <Text _as="h2" variant="headingBold">
-        Departments Data
-      </Text>
-      <pre className={style.myData}>
-        {JSON.stringify(allDepartments, null, 2)}
-      </pre>
-    </main>
+        </Box>
+      </HStack>
+    </Box>
   )
 }
 
