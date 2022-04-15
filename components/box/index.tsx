@@ -18,7 +18,7 @@ type SemanticElements =
   | 'time'
 
 export interface BoxProps {
-  /* @as: semantic element alias - 'h1' - 'h6' | 'p' | 'li' | 'figcaption' | etc */
+  /* @as: semantic element alias - 'article' | 'aside' | 'details' | 'main' | 'header' | etc */
   _as?: SemanticElements | 'div'
   /* @className: consumer can compose a className */
   className?: string

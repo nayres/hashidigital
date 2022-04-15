@@ -1,0 +1,6 @@
+.baseVStack {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: 100%;
+}

@@ -19,6 +19,7 @@
     "paths": {
       "@components/text": ["components/text/index.tsx"],
       "@components/box": ["components/box/index.tsx"],
+      "@components/vStack": ["components/vStack/index.tsx"],
       "@layouts/base": ["layouts/base/index.tsx"]
     }
   },

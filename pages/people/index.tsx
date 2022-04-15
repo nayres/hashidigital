@@ -1,9 +1,10 @@
 import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
 import { PersonRecord, DepartmentRecord } from 'types'
-import BaseLayout from '@layouts/base'
-import Text from '@components/text'
-import Box from '@components/box'
+import BaseLayout from 'layouts/base'
+import Text from 'components/text'
+import Box from 'components/box'
+import VStack from 'components/vStack'
 import style from './style.module.css'
 import query from './query.graphql'
 
@@ -18,11 +19,18 @@ export default function PeoplePage({
 }: Props): React.ReactElement {
   return (
     <main className="g-grid-container">
-      <Box _as="section" background="lightBlue" padding="2rem">
-        <Text _as="h2" variant="headingBold" color="accordionGray">
-          People Data
-        </Text>
-      </Box>
+      <VStack spacing="1rem">
+        <Box _as="section" border="1px solid lightBlue" padding="2rem">
+          <Text _as="h2" variant="headingBold" color="accordionGray">
+            People Data
+          </Text>
+        </Box>
+        <Box _as="section" border="1px solid lightBlue" padding="2rem">
+          <Text _as="h2" variant="headingBold" color="accordionGray">
+            People Data
+          </Text>
+        </Box>
+      </VStack>
       <pre className={style.myData}>{JSON.stringify(allPeople, null, 2)}</pre>
       <Text _as="h2" variant="headingBold">
         Departments Data
