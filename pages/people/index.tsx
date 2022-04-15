@@ -4,6 +4,7 @@ import { PersonRecord, DepartmentRecord } from 'types'
 import BaseLayout from 'layouts/base'
 import Text from 'components/text'
 import Box from 'components/box'
+import HStack from 'components/hStack'
 import VStack from 'components/vStack'
 import style from './style.module.css'
 import query from './query.graphql'
@@ -19,18 +20,34 @@ export default function PeoplePage({
 }: Props): React.ReactElement {
   return (
     <main className="g-grid-container">
-      <VStack spacing="1rem">
-        <Box _as="section" border="1px solid lightBlue" padding="2rem">
-          <Text _as="h2" variant="headingBold" color="accordionGray">
-            People Data
-          </Text>
-        </Box>
-        <Box _as="section" border="1px solid lightBlue" padding="2rem">
-          <Text _as="h2" variant="headingBold" color="accordionGray">
-            People Data
-          </Text>
-        </Box>
-      </VStack>
+      <Box padding="2rem">
+        <HStack spacing="1rem">
+          <VStack spacing="1rem">
+            <Box _as="section" border="1px solid lightBlue" padding="2rem">
+              <Text _as="h2" variant="headingBold" color="accordionGray">
+                People Data
+              </Text>
+            </Box>
+            <Box _as="section" border="1px solid lightBlue" padding="2rem">
+              <Text _as="h2" variant="headingBold" color="accordionGray">
+                People Data
+              </Text>
+            </Box>
+          </VStack>
+          <VStack spacing="1rem">
+            <Box _as="section" border="1px solid lightBlue" padding="2rem">
+              <Text _as="h2" variant="headingBold" color="accordionGray">
+                People Data
+              </Text>
+            </Box>
+            <Box _as="section" border="1px solid lightBlue" padding="2rem">
+              <Text _as="h2" variant="headingBold" color="accordionGray">
+                People Data
+              </Text>
+            </Box>
+          </VStack>
+        </HStack>
+      </Box>
       <pre className={style.myData}>{JSON.stringify(allPeople, null, 2)}</pre>
       <Text _as="h2" variant="headingBold">
         Departments Data
