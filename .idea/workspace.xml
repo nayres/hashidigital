@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="VStack component added - some utils to power behavior">
-      <change afterPath="$PROJECT_DIR$/compositions/results/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compositions/results/style.module.css" afterDir="false" />
+    <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Add result tile component - ROUGH layout">
+      <change afterPath="$PROJECT_DIR$/compositions/resultsTile/FallbackAvatar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositions/resultsTile/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/box/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/box/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hStack/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/hStack/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/text/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/text/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/text/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/text/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/results/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/results/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/people/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/people/query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="results-tile-layout" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pages/people/index.tsx" root0="FORCE_HIGHLIGHTING" />
@@ -34,6 +56,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="27o76APXbpwcpo0YkVz4mZ9TjaC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,6 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/compositions" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -65,6 +91,7 @@
       <updated>1649974407417</updated>
       <workItem from="1649974409146" duration="1034000" />
       <workItem from="1649976191940" duration="3034000" />
+      <workItem from="1650059926762" duration="3557000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup / text component">
       <created>1649978084699</created>
@@ -87,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649986995453</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add results component">
+      <created>1650045080291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650045080292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +142,8 @@
     <MESSAGE value="Initial setup / text component" />
     <MESSAGE value="VStack component added - some utils to power behavior" />
     <MESSAGE value="Add HStack" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add HStack" />
+    <MESSAGE value="Add results component" />
+    <MESSAGE value="Add result tile component - ROUGH layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add result tile component - ROUGH layout" />
   </component>
 </project>

@@ -24,6 +24,7 @@ type SemanticText =
   | 'ul'
 
 interface TextProps {
+  align?: 'left' | 'center' | 'right'
   /* @variant: typography variant - 'headingBold' | 'headingLight' | 'body' | 'label' */
   variant?: 'headingBold' | 'headingLight' | 'body' | 'label'
   /* @color: typography color - 'black' | 'gray3' | 'gray4' | 'accordionGray' | 'inputGray' */
@@ -35,6 +36,7 @@ interface TextProps {
 }
 
 const Text: FC<TextProps> = ({
+  align = 'left',
   variant = 'body',
   color = 'black',
   _as = 'h1',
@@ -45,9 +47,8 @@ const Text: FC<TextProps> = ({
   return (
     <_as
       className={`${styles.textBase} ${getClassNames(variant)} ${getClassNames(
-        color,
-        className
-      )}`}
+        color
+      )} ${getClassNames(align, className)}`}
     >
       {children}
     </_as>
