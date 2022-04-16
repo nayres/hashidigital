@@ -36,7 +36,6 @@ const ResultsTile = ({
             <Image
               src={avatar}
               quality={100}
-              // layout="fill"
               width={107}
               height={107}
               alt={avatarAlt ?? `avatar for ${name}`}

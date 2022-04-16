@@ -3,6 +3,5 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   flex-direction: row;
-
-  /* width: 100%; */
+  width: 100%;
 }
