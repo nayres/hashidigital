@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ReactNode } from 'react'
 import { makeClassName } from 'components/utils'
 import styles from './style.module.css'
 
@@ -9,21 +9,12 @@ type SemanticText =
   | 'h4'
   | 'h5'
   | 'h6'
-  | 'blockquote'
-  | 'dd'
-  | 'dl'
-  | 'dt'
   | 'figcaption'
-  | 'figure'
-  | 'hr'
   | 'li'
-  | 'menu'
-  | 'ol'
   | 'p'
-  | 'pre'
-  | 'ul'
+  | 'label'
 
-interface TextProps {
+type TextProps<TextElement> = {
   align?: 'left' | 'center' | 'right'
   /* @variant: typography variant - 'headingBold' | 'headingLight' | 'body' | 'label' */
   variant?: 'headingBold' | 'headingLight' | 'body' | 'label'
@@ -31,24 +22,27 @@ interface TextProps {
   color?: 'black' | 'gray3' | 'gray4' | 'accordionGray' | 'inputGray'
   /* @as: semantic element alias - 'h1' - 'h6' | 'p' | 'li' | 'figcaption' | etc */
   _as?: SemanticText
+  children: ReactNode
   /* @className: consumer can compose a className */
   className?: string
-}
+} & TextElement
 
-const Text: FC<TextProps> = ({
+const Text = <TextElement,>({
   align = 'left',
   variant = 'body',
   color = 'black',
   _as = 'h1',
   children,
   className,
-}) => {
+  ...props
+}: TextProps<TextElement>) => {
   const getClassNames = makeClassName(styles)
   return (
     <_as
       className={`${styles.textBase} ${getClassNames(variant)} ${getClassNames(
         color
       )} ${getClassNames(align, className)}`}
+      {...props}
     >
       {children}
     </_as>

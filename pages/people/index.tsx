@@ -3,7 +3,9 @@ import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
 import { PersonRecord, DepartmentRecord } from 'types'
 import BaseLayout from 'layouts/base'
+import Header from 'compositions/header'
 import Box from 'components/box'
+import VStack from 'components/vStack'
 import HStack from 'components/hStack'
 import Sidebar from 'compositions/sidebar'
 import Results from 'compositions/results'
@@ -20,27 +22,30 @@ export default function PeoplePage({
 }: // allDepartments,
 Props): React.ReactElement {
   return (
-    <Box className="g-grid-container">
-      <HStack>
-        <Sidebar width="25%" height="100vh">
-          Hello
-        </Sidebar>
-        <Results>
-          <HStack spacing="32px">
-            {allPeople.map((person) => (
-              <ResultTile
-                key={person.id}
-                avatar={person?.avatar?.url ?? ''}
-                avatarAlt={person?.avatar?.alt}
-                name={person?.name ?? 'name'}
-                title={person?.title ?? 'title'}
-                department={person?.department?.name ?? 'department'}
-              />
-            ))}
-          </HStack>
-        </Results>
-      </HStack>
-    </Box>
+    <VStack>
+      <Header />
+      <Box className="g-grid-container">
+        <HStack>
+          <Sidebar width="25%" height="100vh">
+            Hello
+          </Sidebar>
+          <Results>
+            <HStack spacing="32px">
+              {allPeople.map((person) => (
+                <ResultTile
+                  key={person.id}
+                  avatar={person?.avatar?.url ?? ''}
+                  avatarAlt={person?.avatar?.alt}
+                  name={person?.name ?? 'name'}
+                  title={person?.title ?? 'title'}
+                  department={person?.department?.name ?? 'department'}
+                />
+              ))}
+            </HStack>
+          </Results>
+        </HStack>
+      </Box>
+    </VStack>
   )
 }
 
