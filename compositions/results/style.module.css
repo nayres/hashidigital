@@ -1,6 +1,7 @@
 .resultsBase {
   height: 100vh;
   overflow: hidden;
+  width: 75%;
 }
 
 .resultsScrollable {

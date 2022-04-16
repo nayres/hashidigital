@@ -1,6 +1,7 @@
 .textBase {
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 /* design tokens - from figma */
@@ -42,9 +43,21 @@
 }
 
 .gray3 {
-  color: var(--gray-3);
+  color: #373942;
 }
 
 .gray4 {
-  color: var(--gray-4);
+  color: #4e515d;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }

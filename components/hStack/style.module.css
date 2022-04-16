@@ -1,5 +1,6 @@
 .baseHStack {
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   flex-direction: row;
   width: 100%;
