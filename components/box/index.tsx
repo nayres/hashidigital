@@ -1,22 +1,18 @@
-import { FC, HTMLProps } from 'react'
+import { HTMLProps } from 'react'
 import { makeClassName } from 'components/utils'
 import styles from './style.module.css'
 
 type SemanticElements =
   | 'article'
   | 'aside'
-  | 'details'
-  | 'figcaption'
   | 'figure'
   | 'header'
   | 'main'
-  | 'mark'
   | 'nav'
   | 'section'
   | 'summary'
-  | 'time'
 
-type BoxProps = {
+type BoxProps<BoxElement> = {
   /* @as: semantic element alias - 'article' | 'aside' | 'details' | 'main' | 'header' | etc */
   _as?: SemanticElements | 'div'
   /* @className: consumer can compose a className */
@@ -33,9 +29,10 @@ type BoxProps = {
   padding?: string
   /* @radius: border radius of box element */
   radius?: string
-} & HTMLProps<HTMLDivElement>
+} & HTMLProps<HTMLDivElement> &
+  BoxElement
 
-const Box: FC<BoxProps> = ({
+const Box = <BoxElement,>({
   _as = 'div',
   children,
   className,
@@ -46,7 +43,7 @@ const Box: FC<BoxProps> = ({
   padding,
   radius,
   ...props
-}) => {
+}: BoxProps<BoxElement>) => {
   const getClassNames = makeClassName(styles)
   return (
     <_as

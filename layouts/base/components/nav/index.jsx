@@ -131,7 +131,7 @@ function Nav({
   }
 
   return (
-    <header className="g-nav g-type-body-strong">
+    <nav className="g-nav g-type-body-strong">
       {activeDesktop || activeMobile ? (
         <div className="background" onClick={closePanels} />
       ) : undefined}
@@ -677,7 +677,7 @@ function Nav({
           </ul>
         </div>
       </nav>
-    </header>
+    </nav>
   )
 }
 
