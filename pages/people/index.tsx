@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
 import { PersonRecord, DepartmentRecord } from 'types'
+import {
+  useFilterPeopleByName,
+  useFilterPeopleByDepartment,
+} from './useFilterPeople'
 import BaseLayout from 'layouts/base'
 import Header from 'compositions/header'
 import Box from 'components/box'
@@ -17,30 +21,72 @@ interface Props {
   allDepartments: DepartmentRecord[]
 }
 
+// TODO: consolidate (same type in Header)
+type ChangePayload = {
+  searchTerm: string
+  filterHasAvatar: boolean
+}
+
 export default function PeoplePage({
   allPeople,
-}: // allDepartments,
-Props): React.ReactElement {
+  allDepartments,
+}: Props): React.ReactElement {
+  const [department, setCurrentDepartment] = useState('')
+  const [searchValue, setSearchValue] = useState('')
+  const [hasAvatarChecked, setHasAvatarChecked] = useState(false)
+
+  const [filterByDepartment, departmentPeople] =
+    useFilterPeopleByDepartment(allPeople)
+  const [filterPeople, filteredPeople] = useFilterPeopleByName()
+
+  useEffect(() => {
+    filterByDepartment(department)
+  }, [filterByDepartment, department])
+
+  useEffect(() => {
+    filterPeople(departmentPeople, searchValue)
+  }, [filterPeople, departmentPeople, searchValue])
+
+  const handleFilterChange = (state: ChangePayload) => {
+    setSearchValue(state.searchTerm)
+    setHasAvatarChecked(state.filterHasAvatar)
+  }
+
+  const handleDepSearch = (val: string) => setCurrentDepartment(val)
+
   return (
     <VStack>
-      <Header />
+      <Header
+        searchValue={searchValue}
+        hasAvatarChecked={hasAvatarChecked}
+        onFilter={handleFilterChange}
+      />
       <Box className="g-grid-container">
         <HStack>
-          <Sidebar width="25%" height="100vh">
+          <Sidebar
+            width="25%"
+            height="max-content"
+            onSearch={handleDepSearch}
+            departments={allDepartments}
+          >
             Hello
           </Sidebar>
           <Results>
             <HStack spacing="32px">
-              {allPeople.map((person) => (
-                <ResultTile
-                  key={person.id}
-                  avatar={person?.avatar?.url ?? ''}
-                  avatarAlt={person?.avatar?.alt}
-                  name={person?.name ?? 'name'}
-                  title={person?.title ?? 'title'}
-                  department={person?.department?.name ?? 'department'}
-                />
-              ))}
+              {filteredPeople
+                .filter((person: PersonRecord) =>
+                  hasAvatarChecked ? person?.avatar !== null : true
+                )
+                .map((person) => (
+                  <ResultTile
+                    key={person.id}
+                    avatar={person?.avatar?.url ?? ''}
+                    avatarAlt={person?.avatar?.alt}
+                    name={person?.name ?? 'name'}
+                    title={person?.title ?? 'title'}
+                    department={person?.department?.name ?? 'department'}
+                  />
+                ))}
             </HStack>
           </Results>
         </HStack>
