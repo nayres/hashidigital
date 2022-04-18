@@ -1,5 +1,7 @@
 import { FC, useState, ChangeEvent, FormEvent } from 'react'
+import { useMapDepartments } from './useMapDepartments'
 import { DepartmentRecord } from 'types'
+import Accordion from 'compositions/accordion'
 import HStack from 'components/hStack'
 import Box from 'components/box'
 
@@ -22,31 +24,16 @@ const Sidebar: FC<SidebarProps> = ({
   children,
 }) => {
   const [val, setValue] = useState('')
+  const mapped = useMapDepartments(departments)
 
-  // removing this and search form below
-  const handleDepartmentSearch = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    onSearch(val)
+  const handleDepartmentSearch = (value: DepartmentRecord) => {
+    onSearch(value?.name ?? '')
   }
 
   return (
     <Box _as="nav" width={width} height={height} className={className}>
       <HStack align="center">
-        <form onSubmit={handleDepartmentSearch}>
-          <input
-            type="text"
-            value={val}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setValue(e.target.value)
-            }
-          />
-          <input type="submit" value="search" />
-          <ul>
-            {departments.map((department, index) => (
-              <div key={index.toString()}>{department.name}</div>
-            ))}
-          </ul>
-        </form>
+        <Accordion list={mapped} onSelect={handleDepartmentSearch} />
       </HStack>
     </Box>
   )

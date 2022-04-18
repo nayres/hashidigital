@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Added header state, and filtering logic">
+      <change afterPath="$PROJECT_DIR$/compositions/accordion/AccordionOption.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositions/accordion/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositions/sidebar/useMapDepartments.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compositions/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/sidebar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/people/query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -154,7 +167,8 @@
     <MESSAGE value="Add result tile component - ROUGH layout" />
     <MESSAGE value="Added header with contents, and some added generic capabilities for box and text" />
     <MESSAGE value="Added header state, and filtering logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added header state, and filtering logic" />
+    <MESSAGE value="Fix silent infinite loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix silent infinite loop" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
