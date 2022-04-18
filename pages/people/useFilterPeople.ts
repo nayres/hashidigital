@@ -2,12 +2,12 @@ import { useState, useCallback } from 'react'
 import { debounce } from 'ts-debounce'
 import { PersonRecord } from 'types'
 
-type FilterByXReturnType = [
+type FilterByPeopleByNameReturnType = [
   (people: PersonRecord[], searchValue: string) => void,
   PersonRecord[] | []
 ]
 
-export const useFilterPeopleByName = (): FilterByXReturnType => {
+export const useFilterPeopleByName = (): FilterByPeopleByNameReturnType => {
   const [currPeopleList, setCurrPeopleList] = useState<PersonRecord[] | []>([])
 
   const filterPeople = useCallback(

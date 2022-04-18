@@ -1,5 +1,8 @@
 import { useState, useEffect, MouseEvent, ReactNode, Children } from 'react'
 import HStack from 'components/hStack'
+import CaratDownIcon from './CaratDownIcon'
+import ChevronIcon from './ChevronIcon'
+import style from './style.module.css'
 
 interface AccordionOptionProps {
   id: string
@@ -17,34 +20,50 @@ export default function AccordionOption({
   children,
 }: AccordionOptionProps) {
   const [isOpen, toggleItemOpen] = useState<boolean | undefined>()
-  const [selected, setSelected] = useState<boolean | undefined>(() => isOpen)
+  const [selected, setSelected] = useState<boolean | undefined>(
+    () => isSelected
+  )
 
   useEffect(() => {
-    setSelected(isOpen)
-  }, [isOpen])
+    setSelected(isSelected)
+  }, [isSelected])
 
   const departmentChildren = Children.toArray(children)
 
   return (
     <div>
-      {departmentChildren.length > 0 && (
+      {departmentChildren.length > 0 ? (
         <div
-          onClick={() => toggleItemOpen(!isOpen)}
-          style={{ fontSize: '0.5rem' }}
+          className={
+            selected
+              ? `${style.accordionLabel} ${style.selected}`
+              : `${style.accordionLabel}`
+          }
+          onClick={(e: MouseEvent<HTMLInputElement>) => {
+            setSelected(!selected)
+            onSelect(e)
+            toggleItemOpen(!isOpen)
+          }}
         >
-          {isOpen ? 'close' : 'open'}
+          {isOpen ? <CaratDownIcon /> : <ChevronIcon />}
+          {label}
+        </div>
+      ) : (
+        <div
+          className={
+            selected
+              ? `${style.accordionLink} ${style.selected}`
+              : `${style.accordionLink}`
+          }
+          onClick={(e: MouseEvent<HTMLInputElement>) => {
+            setSelected(!selected)
+            onSelect(e)
+          }}
+        >
+          {label}
         </div>
       )}
-      <div
-        onClick={(e: MouseEvent<HTMLInputElement>) => {
-          setSelected(!selected)
-          onSelect(e)
-        }}
-        style={{ fontSize: '1rem' }}
-      >
-        {label}
-      </div>
-      <div>{isOpen && children}</div>
+      <div className={style.accordionLink}>{isOpen && children}</div>
     </div>
   )
 }
