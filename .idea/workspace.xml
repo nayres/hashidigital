@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Added header state, and filtering logic">
-      <change afterPath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compositions/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/sidebar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/people/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,9 +62,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="null" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/compositions" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -87,6 +92,7 @@
       <workItem from="1649974409146" duration="1034000" />
       <workItem from="1649976191940" duration="3034000" />
       <workItem from="1650059926762" duration="3875000" />
+      <workItem from="1650217016644" duration="2775000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup / text component">
       <created>1649978084699</created>
@@ -149,5 +155,9 @@
     <MESSAGE value="Added header with contents, and some added generic capabilities for box and text" />
     <MESSAGE value="Added header state, and filtering logic" />
     <option name="LAST_COMMIT_MESSAGE" value="Added header state, and filtering logic" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

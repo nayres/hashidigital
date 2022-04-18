@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { debounce } from 'ts-debounce'
 import { PersonRecord } from 'types'
 
@@ -10,8 +10,8 @@ type FilterByXReturnType = [
 export const useFilterPeopleByName = (): FilterByXReturnType => {
   const [currPeopleList, setCurrPeopleList] = useState<PersonRecord[] | []>([])
 
-  const filterPeople = debounce(
-    (people: PersonRecord[], searchValue: string) => {
+  const filterPeople = useCallback(
+    debounce((people: PersonRecord[], searchValue: string) => {
       const filteredPeople = people.filter((person: PersonRecord) => {
         if (person?.name) {
           const cleanedName = person.name.toLowerCase()
@@ -20,8 +20,8 @@ export const useFilterPeopleByName = (): FilterByXReturnType => {
       })
 
       if (filteredPeople.length > 0) setCurrPeopleList(filteredPeople)
-    },
-    0
+    }, 0),
+    []
   )
 
   return [filterPeople, currPeopleList]
@@ -37,7 +37,7 @@ export const useFilterPeopleByDepartment = (
 ): FilterByDepartmentReturnType => {
   const [currPeopleList, setCurrPeopleList] = useState<PersonRecord[]>(people)
 
-  const filterByDeparment = (department: string) => {
+  const filterByDeparment = useCallback((department: string) => {
     if (department === '') return
 
     const filteredPeople = people.filter(
@@ -45,7 +45,7 @@ export const useFilterPeopleByDepartment = (
     )
 
     if (filteredPeople.length > 0) setCurrPeopleList(filteredPeople)
-  }
+  }, [])
 
   return [filterByDeparment, currPeopleList]
 }
