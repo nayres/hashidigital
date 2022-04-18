@@ -9,3 +9,11 @@
   background-color: var(--black);
   padding: 16px;
 }
+
+/* .peopleGrid { */
+
+/*  display: grid; */
+
+/*  grid-template-columns: auto minmax(auto, 85%); */
+
+/* } */

@@ -1,5 +1,6 @@
 import { HTMLProps } from 'react'
 import Image from 'next/image'
+import { useBreakpoints } from 'utils/useBreakpoints'
 import Box from 'components/box'
 import VStack from 'components/vStack'
 import Text from 'components/text'
@@ -22,9 +23,10 @@ const ResultsTile = ({
   department,
   ...props
 }: ResultsTileProps) => {
+  const breakpoint = useBreakpoints()
   return (
     <Box
-      width="30%"
+      width={breakpoint === 'mobile' ? '100%' : '30%'}
       height="100%"
       border="1px solid #C0C0C0"
       padding="17px 0 0 0"
@@ -51,9 +53,11 @@ const ResultsTile = ({
           <Text variant="body" color="gray4" align="center">
             {title}
           </Text>
-          <Text variant="body" color="gray4" align="center">
-            {department}
-          </Text>
+          {breakpoint !== 'mobile' && (
+            <Text variant="body" color="gray4" align="center">
+              {department}
+            </Text>
+          )}
         </VStack>
       </VStack>
     </Box>

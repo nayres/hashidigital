@@ -31,7 +31,7 @@ export default function Accordion({ list, onSelect }: AccordionProps) {
   return (
     <VStack>
       {list.map((item: DepartmentRecord) => (
-        <VStack key={item.id}>{createAccordion(item)}</VStack>
+        <div key={item.id}>{createAccordion(item)}</div>
       ))}
     </VStack>
   )
