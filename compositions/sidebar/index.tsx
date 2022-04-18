@@ -42,8 +42,8 @@ const Sidebar: FC<SidebarProps> = ({
           />
           <input type="submit" value="search" />
           <ul>
-            {departments.map((department) => (
-              <li key={department.id}>{department.name}</li>
+            {departments.map((department, index) => (
+              <div key={index.toString()}>{department.name}</div>
             ))}
           </ul>
         </form>
