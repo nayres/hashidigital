@@ -7,7 +7,15 @@
 
 query {
   allDepartments(first: 100) {
+    id
     name
+    children {
+      id
+      name
+      parent {
+        id
+      }
+    }
     parent {
       id
     }
