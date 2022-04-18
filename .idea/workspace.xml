@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Add accordion styles">
-      <change afterPath="$PROJECT_DIR$/compositions/accordion/CaratDownIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compositions/accordion/ChevronIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compositions/accordion/style.module.css" afterDir="false" />
+    <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Mobile style">
+      <change afterPath="$PROJECT_DIR$/utils/useBreakpoints.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/hStack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hStack/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/accordion/AccordionOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/accordion/AccordionOption.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compositions/accordion/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/accordion/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/header/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/results/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/results/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/results/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/results/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compositions/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/sidebar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/people/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/people/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/style.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +183,8 @@
     <MESSAGE value="Added header state, and filtering logic" />
     <MESSAGE value="Fix silent infinite loop" />
     <MESSAGE value="Add accordion styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add accordion styles" />
+    <MESSAGE value="Mobile style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mobile style" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

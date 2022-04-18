@@ -1,6 +1,22 @@
+.headerContainer {
+  padding: 146px 0 111px 0;
+}
+
 .headerTitle {
   font-size: 56px;
   font-weight: 300;
   line-height: 64px;
   letter-spacing: -1.2px;
+}
+
+@media (max-width: 700px) {
+  .headerContainer {
+    padding: 40px 20px 0 20px;
+  }
+
+  .headerTitle {
+    font-size: 34px;
+    line-height: 42px;
+    letter-spacing: -0.2px;
+  }
 }

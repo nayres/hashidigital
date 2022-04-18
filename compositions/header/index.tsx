@@ -3,6 +3,7 @@ import Box from 'components/box'
 import HStack from 'components/hStack'
 import VStack from 'components/vStack'
 import Text from 'components/text'
+import { useBreakpoints } from 'utils/useBreakpoints'
 import styles from './style.module.css'
 
 type ChangePayload = {
@@ -17,6 +18,7 @@ interface HeaderProps {
 }
 
 const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
+  const breakpoint = useBreakpoints()
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     onFilter({
@@ -32,8 +34,8 @@ const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
     })
 
   return (
-    <Box _as="header" height="403px">
-      <HStack align="center">
+    <Box _as="header" className={styles.headerContainer}>
+      <HStack align={breakpoint !== 'mobile' ? 'center' : 'left'}>
         <VStack align="center" spacing="34px">
           <VStack align="center" spacing="15px">
             <Text

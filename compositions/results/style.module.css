@@ -1,9 +1,12 @@
 .resultsBase {
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
   width: 75%;
 }
 
 .resultsScrollable {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   overflow-y: auto;
 }

@@ -6,6 +6,7 @@ import {
   useFilterPeopleByName,
   useFilterPeopleByDepartment,
 } from './useFilterPeople'
+import { useBreakpoints } from 'utils/useBreakpoints'
 import BaseLayout from 'layouts/base'
 import Header from 'compositions/header'
 import Box from 'components/box'
@@ -35,6 +36,7 @@ export default function PeoplePage({
   const [searchValue, setSearchValue] = useState('')
   const [hasAvatarChecked, setHasAvatarChecked] = useState(false)
 
+  const breakpoint = useBreakpoints()
   const [filterByDepartment, departmentPeople] =
     useFilterPeopleByDepartment(allPeople)
   const [filterPeople, filteredPeople] = useFilterPeopleByName()
@@ -61,16 +63,11 @@ export default function PeoplePage({
         hasAvatarChecked={hasAvatarChecked}
         onFilter={handleFilterChange}
       />
-      <Box className="g-grid-container">
+      <Box padding="2rem 2rem 0 2rem">
         <HStack>
-          <Sidebar
-            width="25%"
-            height="100%"
-            onSearch={handleDepSearch}
-            departments={allDepartments}
-          >
-            Hello
-          </Sidebar>
+          {breakpoint !== 'mobile' && (
+            <Sidebar onSearch={handleDepSearch} departments={allDepartments} />
+          )}
           <Results>
             <HStack spacing="32px">
               {filteredPeople
