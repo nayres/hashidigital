@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ReactNode } from 'react'
 import styles from './style.module.css'
 import { StackAlignmentTypes, StackStyleAttributes } from 'components/types'
 import { getMappedStackStyles, makeClassName } from 'components/utils'
@@ -16,10 +16,9 @@ type SemanticElements =
   | 'nav'
   | 'section'
   | 'summary'
-  | 'figure'
   | 'time'
 
-interface HStackProps {
+type HStackProps<HStackElement> = {
   /* @as: semantic element alias - 'article' | 'aside' | 'details' | 'main' | 'header' | etc */
   _as?: SemanticElements | 'div'
   /* @spacing: the space between stacked content */
@@ -28,15 +27,16 @@ interface HStackProps {
   align?: Exclude<StackAlignmentTypes, 'top' | 'bottom'>
   /* @className: consumer can compose a className */
   className?: string
-}
+  children: ReactNode
+} & HStackElement
 
-const HStack: FC<HStackProps> = ({
+const HStack = <HStackElement,>({
   _as = 'div',
   spacing,
   align = 'left',
   className,
   children,
-}) => {
+}: HStackProps<HStackElement>) => {
   const getClassNames = makeClassName(styles)
   const alignItemsFromProps = getMappedStackStyles(
     align,

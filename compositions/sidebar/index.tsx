@@ -3,7 +3,9 @@ import { useMapDepartments } from './useMapDepartments'
 import { DepartmentRecord } from 'types'
 import Accordion from 'compositions/accordion'
 import HStack from 'components/hStack'
+import VStack from 'components/vStack'
 import Box from 'components/box'
+import Text from 'components/text'
 
 interface SidebarProps {
   // removing
@@ -32,9 +34,12 @@ const Sidebar: FC<SidebarProps> = ({
 
   return (
     <Box _as="nav" width={width} height={height} className={className}>
-      <HStack align="center">
-        <Accordion list={mapped} onSelect={handleDepartmentSearch} />
-      </HStack>
+      <VStack spacing="14px">
+        <Text variant="headingBold">Filter By Department</Text>
+        <HStack align="center" style={{ overflowY: 'auto' }}>
+          <Accordion list={mapped} onSelect={handleDepartmentSearch} />
+        </HStack>
+      </VStack>
     </Box>
   )
 }

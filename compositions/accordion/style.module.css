@@ -1,0 +1,35 @@
+.accordionLabel {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  color: #484848;
+  border-left: none;
+  font-size: 1rem;
+  font-weight: var(--font-weight-reg);
+  line-height: 28px;
+
+&:hover {
+  cursor: pointer;
+  color: #1563ff;
+}
+}
+
+.accordionLink {
+  color: #484848;
+  padding-left: 13px;
+  margin-left: 2px;
+  border-left: 1px solid #cbcbcb;
+  font-size: 1rem;
+  font-weight: var(--font-weight-reg);
+  line-height: 28px;
+
+&:hover {
+  color: #1563ff;
+  cursor: pointer;
+}
+}
+
+.selected {
+  color: #1563ff;
+}

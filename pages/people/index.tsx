@@ -65,7 +65,7 @@ export default function PeoplePage({
         <HStack>
           <Sidebar
             width="25%"
-            height="max-content"
+            height="100%"
             onSearch={handleDepSearch}
             departments={allDepartments}
           >

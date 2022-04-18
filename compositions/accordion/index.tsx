@@ -1,4 +1,4 @@
-import { MouseEvent, Fragment } from 'react'
+import { useState, MouseEvent, Fragment } from 'react'
 import VStack from 'components/vStack'
 import AccordionOption from './AccordionOption'
 import { DepartmentRecord } from 'types'
@@ -8,15 +8,18 @@ interface AccordionProps {
   onSelect: (value: DepartmentRecord) => void
 }
 export default function Accordion({ list, onSelect }: AccordionProps) {
-  const createAccordion = (item: DepartmentRecord & { selected?: boolean }) =>
+  const [selected, setSelected] = useState<DepartmentRecord | null>(null)
+
+  const createAccordion = (item: DepartmentRecord) =>
     item.children && (
       <AccordionOption
         id={item.id}
         key={item.id}
         onSelect={(e: MouseEvent<HTMLElement>) => {
           onSelect(item)
+          setSelected(item)
         }}
-        isSelected={item.selected}
+        isSelected={selected === item}
         label={item?.name ?? ''}
       >
         {item.children.map((item: DepartmentRecord) => {
@@ -27,8 +30,8 @@ export default function Accordion({ list, onSelect }: AccordionProps) {
 
   return (
     <VStack>
-      {list.map((item: DepartmentRecord, index) => (
-        <div key={index.toString()}>{createAccordion(item)}</div>
+      {list.map((item: DepartmentRecord) => (
+        <VStack key={item.id}>{createAccordion(item)}</VStack>
       ))}
     </VStack>
   )
