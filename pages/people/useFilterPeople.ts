@@ -4,14 +4,17 @@ import { PersonRecord } from 'types'
 
 type FilterByPeopleByNameReturnType = [
   (people: PersonRecord[], searchValue: string) => void,
-  PersonRecord[] | []
+  PersonRecord[] | [],
+  string | null
 ]
 
 export const useFilterPeopleByName = (): FilterByPeopleByNameReturnType => {
   const [currPeopleList, setCurrPeopleList] = useState<PersonRecord[] | []>([])
+  const [error, setError] = useState<string | null>(null)
 
   const filterPeople = useCallback(
     debounce((people: PersonRecord[], searchValue: string) => {
+      if (error) setError(null)
       const filteredPeople = people.filter((person: PersonRecord) => {
         if (person?.name) {
           const cleanedName = person.name.toLowerCase()
@@ -20,11 +23,12 @@ export const useFilterPeopleByName = (): FilterByPeopleByNameReturnType => {
       })
 
       if (filteredPeople.length > 0) setCurrPeopleList(filteredPeople)
+      else setError('No results found')
     }, 0),
     []
   )
 
-  return [filterPeople, currPeopleList]
+  return [filterPeople, currPeopleList, error]
 }
 
 type FilterByDepartmentReturnType = [
