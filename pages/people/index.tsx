@@ -12,6 +12,7 @@ import Header from 'compositions/header'
 import Box from 'components/box'
 import VStack from 'components/vStack'
 import HStack from 'components/hStack'
+import Text from 'components/text'
 import Sidebar from 'compositions/sidebar'
 import Results from 'compositions/results'
 import ResultTile from 'compositions/resultsTile'
@@ -22,7 +23,6 @@ interface Props {
   allDepartments: DepartmentRecord[]
 }
 
-// TODO: consolidate (same type in Header)
 type ChangePayload = {
   searchTerm: string
   filterHasAvatar: boolean
@@ -39,7 +39,7 @@ export default function PeoplePage({
   const breakpoint = useBreakpoints()
   const [filterByDepartment, departmentPeople] =
     useFilterPeopleByDepartment(allPeople)
-  const [filterPeople, filteredPeople] = useFilterPeopleByName()
+  const [filterPeople, filteredPeople, filterError] = useFilterPeopleByName()
 
   useEffect(() => {
     filterByDepartment(department)
@@ -70,20 +70,26 @@ export default function PeoplePage({
           )}
           <Results>
             <HStack spacing="32px">
-              {filteredPeople
-                .filter((person: PersonRecord) =>
-                  hasAvatarChecked ? person?.avatar !== null : true
-                )
-                .map((person) => (
-                  <ResultTile
-                    key={person.id}
-                    avatar={person?.avatar?.url ?? ''}
-                    avatarAlt={person?.avatar?.alt}
-                    name={person?.name ?? 'name'}
-                    title={person?.title ?? 'title'}
-                    department={person?.department?.name ?? 'department'}
-                  />
-                ))}
+              {!filterError ? (
+                filteredPeople
+                  .filter((person: PersonRecord) =>
+                    hasAvatarChecked ? person?.avatar !== null : true
+                  )
+                  .map((person) => (
+                    <ResultTile
+                      key={person.id}
+                      avatar={person?.avatar?.url ?? ''}
+                      avatarAlt={person?.avatar?.alt}
+                      name={person?.name ?? 'name'}
+                      title={person?.title ?? 'title'}
+                      department={person?.department?.name ?? 'department'}
+                    />
+                  ))
+              ) : (
+                <Text variant="body" color="gray4" align="center">
+                  {filterError}
+                </Text>
+              )}
             </HStack>
           </Results>
         </HStack>
