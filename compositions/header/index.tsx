@@ -3,6 +3,7 @@ import Box from 'components/box'
 import HStack from 'components/hStack'
 import VStack from 'components/vStack'
 import Text from 'components/text'
+import SearchBar from 'components/searchBar'
 import { useBreakpoints } from 'utils/useBreakpoints'
 import styles from './style.module.css'
 
@@ -49,12 +50,10 @@ const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
             <Text align="center">Find a HashiCorp human</Text>
           </VStack>
           <VStack align="center" spacing="15px">
-            <input
-              name="search-people-input"
-              type="search"
-              value={searchValue}
+            <SearchBar
+              searchValue={searchValue}
+              label="Search people by name"
               onChange={handleSearchChange}
-              placeholder="Search people by name"
             />
             <HStack spacing="12px" align="center">
               <input

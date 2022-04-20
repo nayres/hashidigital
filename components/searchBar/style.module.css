@@ -1,0 +1,30 @@
+.baseSearchBar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cfd1d9;
+  border-radius: 100px;
+  padding: 14px;
+  width: 33.333%;
+
+& input {
+  position: relative;
+  appearance: none;
+  border: unset;
+  padding: 0 28px;
+  color: #4c4f5b;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+
+&:focus {
+  outline: unset;
+}
+}
+
+& label {
+  display: block;
+  height: 20px;
+  position: absolute;
+  z-index: 1;
+}
+}
