@@ -29,9 +29,9 @@ export default function Accordion({ list, onSelect }: AccordionProps) {
     )
 
   return (
-    <VStack>
+    <VStack role="tree">
       {list.map((item: DepartmentRecord) => (
-        <div key={item.id}>{createAccordion(item)}</div>
+        <Fragment key={item.id}>{createAccordion(item)}</Fragment>
       ))}
     </VStack>
   )
