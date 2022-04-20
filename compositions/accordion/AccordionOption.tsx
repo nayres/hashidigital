@@ -31,23 +31,29 @@ export default function AccordionOption({
   const departmentChildren = Children.toArray(children)
 
   return (
-    <div>
+    <>
       {departmentChildren.length > 0 ? (
-        <div
-          className={
-            selected
-              ? `${style.accordionLabel} ${style.selected}`
-              : `${style.accordionLabel}`
-          }
-          onClick={(e: MouseEvent<HTMLInputElement>) => {
-            setSelected(!selected)
-            onSelect(e)
-            toggleItemOpen(!isOpen)
-          }}
-        >
-          {isOpen ? <CaratDownIcon /> : <ChevronIcon />}
-          {label}
-        </div>
+        <>
+          <div
+            className={
+              selected
+                ? `${style.accordionLabel} ${style.selected}`
+                : `${style.accordionLabel}`
+            }
+            onClick={(e: MouseEvent<HTMLInputElement>) => {
+              setSelected(!selected)
+              onSelect(e)
+              toggleItemOpen(!isOpen)
+            }}
+            aria-expanded={isOpen}
+            aria-selected={selected}
+            role="treeitem"
+          >
+            {isOpen ? <CaratDownIcon /> : <ChevronIcon />}
+            <button tabIndex={0}>{label}</button>
+          </div>
+          {isOpen && <div className={style.accordionLink}>{children}</div>}
+        </>
       ) : (
         <div
           className={
@@ -59,11 +65,12 @@ export default function AccordionOption({
             setSelected(!selected)
             onSelect(e)
           }}
+          aria-selected={selected}
+          role="treeitem"
         >
-          {label}
+          <button tabIndex={0}>{label}</button>
         </div>
       )}
-      <div className={style.accordionLink}>{isOpen && children}</div>
-    </div>
+    </>
   )
 }

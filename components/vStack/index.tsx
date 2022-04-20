@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ReactNode } from 'react'
 import styles from './style.module.css'
 import { StackAlignmentTypes, StackStyleAttributes } from 'components/types'
 import { getMappedStackStyles, makeClassName } from 'components/utils'
@@ -16,10 +16,9 @@ type SemanticElements =
   | 'nav'
   | 'section'
   | 'summary'
-  | 'figure'
   | 'time'
 
-interface VStackProps {
+type VStackProps<VStackElement> = {
   /* @as: semantic element alias - 'article' | 'aside' | 'details' | 'main' | 'header' | etc */
   _as?: SemanticElements | 'div'
   /* @spacing: the space between stacked content */
@@ -28,15 +27,17 @@ interface VStackProps {
   align?: Exclude<StackAlignmentTypes, 'left' | 'right'>
   /* @className: consumer can compose a className */
   className?: string
-}
+  children: ReactNode
+} & VStackElement
 
-const VStack: FC<VStackProps> = ({
+const VStack = <VStackElement,>({
   _as = 'div',
   spacing,
   align = 'top',
   className,
   children,
-}) => {
+  ...props
+}: VStackProps<VStackElement>) => {
   const getClassNames = makeClassName(styles)
   const alignItemsFromProps = getMappedStackStyles(
     align,
@@ -55,6 +56,7 @@ const VStack: FC<VStackProps> = ({
         alignItems: `${alignItemsFromProps}`,
         justifyContent: `${justifyContentFromProps}`,
       }}
+      {...props}
     >
       {children}
     </_as>
