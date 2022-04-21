@@ -1,0 +1,16 @@
+.baseCheckbox {
+  cursor: pointer;
+
+& svg {
+  position: relative;
+
+& rect:hover {
+  stroke: #1563ff;
+}
+}
+
+& input {
+  appearance: none;
+  position: absolute;
+}
+}

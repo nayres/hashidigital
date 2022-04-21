@@ -17,6 +17,7 @@ type SemanticElements =
   | 'section'
   | 'summary'
   | 'time'
+  | 'label'
 
 type HStackProps<HStackElement> = {
   /* @as: semantic element alias - 'article' | 'aside' | 'details' | 'main' | 'header' | etc */

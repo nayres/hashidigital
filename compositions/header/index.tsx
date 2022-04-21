@@ -4,6 +4,7 @@ import HStack from 'components/hStack'
 import VStack from 'components/vStack'
 import Text from 'components/text'
 import SearchBar from 'components/searchBar'
+import Checkbox from 'components/checkbox'
 import { useBreakpoints } from 'utils/useBreakpoints'
 import styles from './style.module.css'
 
@@ -55,24 +56,13 @@ const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
               label="Search people by name"
               onChange={handleSearchChange}
             />
-            <HStack spacing="12px" align="center">
-              <input
-                id="filter-humans"
-                type="checkbox"
-                onChange={handleFilterHasAvatarChange}
-                checked={hasAvatarChecked}
-              />
-              <Text
-                _as="label"
-                htmlFor="filter-humans"
-                align="center"
-                variant="label"
-                color="gray4"
-                style={{ width: 'max-content' }}
-              >
-                Hide people missing a profile image
-              </Text>
-            </HStack>
+            <Checkbox
+              id="hide-people-checkbox"
+              onChange={handleFilterHasAvatarChange}
+              label="Hide people missing a profile image"
+              checked={hasAvatarChecked}
+              disabled={false}
+            />
           </VStack>
         </VStack>
       </HStack>
