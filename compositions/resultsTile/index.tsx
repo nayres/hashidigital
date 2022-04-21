@@ -26,6 +26,7 @@ export default function ResultsTile({
   const breakpoint = useBreakpoints()
   return (
     <Box
+      _as="article"
       width={breakpoint === 'mobile' ? '100%' : '30%'}
       height="100%"
       border="1px solid #C0C0C0"
@@ -47,14 +48,14 @@ export default function ResultsTile({
           )}
         </Box>
         <VStack>
-          <Text variant="headingBold" color="gray3" align="center">
+          <Text _as="h1" variant="headingBold" color="gray3" align="center">
             {name}
           </Text>
-          <Text variant="body" color="gray4" align="center">
+          <Text _as="h2" variant="body" color="gray4" align="center">
             {title}
           </Text>
           {breakpoint !== 'mobile' && (
-            <Text variant="body" color="gray4" align="center">
+            <Text _as="h2" variant="body" color="gray4" align="center">
               {department}
             </Text>
           )}
