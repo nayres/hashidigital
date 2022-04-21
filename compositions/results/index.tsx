@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import { ReactNode } from 'react'
 import style from './style.module.css'
 import { useBreakpoints } from 'utils/useBreakpoints'
 import Box from 'components/box'
 import HStack from 'components/hStack'
 
-const Results: FC = ({ children }) => {
+export default function Results({ children }: { children: ReactNode }) {
   const breakpoint = useBreakpoints()
   return (
     <Box
@@ -19,5 +19,3 @@ const Results: FC = ({ children }) => {
     </Box>
   )
 }
-
-export default Results

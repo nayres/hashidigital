@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useEffect } from 'react'
 import throttle from 'lodash.throttle'
 
 const defineWindowSize = (width: number) => {
@@ -10,7 +10,7 @@ const defineWindowSize = (width: number) => {
 export const useBreakpoints = () => {
   const [breakpoint, setBreakpoint] = useState<string | undefined>()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const calcInnerWidth = throttle(() => {
       const innerWidth = defineWindowSize(window.innerWidth)
       setBreakpoint(innerWidth)

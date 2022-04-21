@@ -1,7 +1,7 @@
 {
   "name": "mktg-dev-test",
   "description": "Technical evaluation for web dev applicants",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "author": "HashiCorp",
   "dependencies": {
     "@hashicorp/flight-icons": "^2.1.1",

@@ -1,4 +1,4 @@
-import { FC, useState, ChangeEvent, FormEvent } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 import { useMapDepartments } from './useMapDepartments'
 import { DepartmentRecord } from 'types'
 import Accordion from 'compositions/accordion'
@@ -13,12 +13,11 @@ interface SidebarProps {
   departments: DepartmentRecord[]
 }
 
-const Sidebar: FC<SidebarProps> = ({
+export default function Sidebar({
   className,
   onSearch,
   departments,
-  children,
-}) => {
+}: SidebarProps) {
   const [val, setValue] = useState('')
   const mapped = useMapDepartments(departments)
 
@@ -43,5 +42,3 @@ const Sidebar: FC<SidebarProps> = ({
     </Box>
   )
 }
-
-export default Sidebar

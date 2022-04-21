@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styles from './style.module.css'
+import style from './style.module.css'
 import { StackAlignmentTypes, StackStyleAttributes } from 'components/types'
 import { getMappedStackStyles, makeClassName } from 'components/utils'
 import { hStackAlignmentOptions } from './hStackAlignmentOptions'
@@ -31,14 +31,14 @@ type HStackProps<HStackElement> = {
   children: ReactNode
 } & HStackElement
 
-const HStack = <HStackElement,>({
+export default function HStack<HStackElement>({
   _as = 'div',
   spacing,
   align = 'left',
   className,
   children,
-}: HStackProps<HStackElement>) => {
-  const getClassNames = makeClassName(styles)
+}: HStackProps<HStackElement>) {
+  const getClassNames = makeClassName(style)
   const alignItemsFromProps = getMappedStackStyles(
     align,
     hStackAlignmentOptions
@@ -61,5 +61,3 @@ const HStack = <HStackElement,>({
     </_as>
   )
 }
-
-export default HStack

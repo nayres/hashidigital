@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styles from './style.module.css'
+import style from './style.module.css'
 import { StackAlignmentTypes, StackStyleAttributes } from 'components/types'
 import { getMappedStackStyles, makeClassName } from 'components/utils'
 import { vStackAlignmentOptions } from './vStackAlignmentOptions'
@@ -30,15 +30,15 @@ type VStackProps<VStackElement> = {
   children: ReactNode
 } & VStackElement
 
-const VStack = <VStackElement,>({
+export default function VStack<VStackElement>({
   _as = 'div',
   spacing,
   align = 'top',
   className,
   children,
   ...props
-}: VStackProps<VStackElement>) => {
-  const getClassNames = makeClassName(styles)
+}: VStackProps<VStackElement>) {
+  const getClassNames = makeClassName(style)
   const alignItemsFromProps = getMappedStackStyles(
     align,
     vStackAlignmentOptions
@@ -62,5 +62,3 @@ const VStack = <VStackElement,>({
     </_as>
   )
 }
-
-export default VStack

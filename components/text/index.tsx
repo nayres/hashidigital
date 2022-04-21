@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { makeClassName } from 'components/utils'
-import styles from './style.module.css'
+import style from './style.module.css'
 
 type SemanticText =
   | 'h1'
@@ -27,7 +27,7 @@ type TextProps<TextElement> = {
   className?: string
 } & TextElement
 
-const Text = <TextElement,>({
+export default function Text<TextElement>({
   align = 'left',
   variant = 'body',
   color = 'black',
@@ -35,11 +35,11 @@ const Text = <TextElement,>({
   children,
   className,
   ...props
-}: TextProps<TextElement>) => {
-  const getClassNames = makeClassName(styles)
+}: TextProps<TextElement>) {
+  const getClassNames = makeClassName(style)
   return (
     <_as
-      className={`${styles.textBase} ${getClassNames(variant)} ${getClassNames(
+      className={`${style.textBase} ${getClassNames(variant)} ${getClassNames(
         color
       )} ${getClassNames(align, className)}`}
       {...props}
@@ -48,5 +48,3 @@ const Text = <TextElement,>({
     </_as>
   )
 }
-
-export default Text

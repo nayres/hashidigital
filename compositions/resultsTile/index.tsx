@@ -15,14 +15,14 @@ type ResultsTileProps = {
   department: string
 } & HTMLProps<HTMLDivElement>
 
-const ResultsTile = ({
+export default function ResultsTile({
   avatar,
   avatarAlt,
   name,
   title,
   department,
   ...props
-}: ResultsTileProps) => {
+}: ResultsTileProps) {
   const breakpoint = useBreakpoints()
   return (
     <Box
@@ -63,5 +63,3 @@ const ResultsTile = ({
     </Box>
   )
 }
-
-export default ResultsTile
