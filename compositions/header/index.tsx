@@ -43,8 +43,8 @@ export default function Header({
   return (
     <Box _as="header" className={style.headerContainer}>
       <HStack align={breakpoint !== 'mobile' ? 'center' : 'left'}>
-        <VStack align="center" spacing="34px">
-          <VStack align="center" spacing="15px">
+        <VStack align="center" spacing="2.125rem">
+          <VStack align="center" spacing="0.938rem">
             <Text
               align="center"
               variant="headingLight"
@@ -55,7 +55,7 @@ export default function Header({
             </Text>
             <Text align="center">Find a HashiCorp human</Text>
           </VStack>
-          <VStack align="center" spacing="15px">
+          <VStack align="center" spacing="0.938rem">
             <SearchBar
               searchValue={searchValue}
               label="Search people by name"

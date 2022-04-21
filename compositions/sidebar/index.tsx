@@ -26,14 +26,8 @@ export default function Sidebar({
   }
 
   return (
-    <Box
-      _as="nav"
-      width="25%"
-      height="max-content"
-      className={className}
-      padding="0 0 15rem 0"
-    >
-      <VStack spacing="14px">
+    <Box _as="nav" width="20%" className={className} padding="0 0 15rem 0">
+      <VStack spacing="0.875rem">
         <Text variant="headingBold">Filter By Department</Text>
         <HStack align="center" style={{ overflowY: 'auto' }}>
           <Accordion list={mapped} onSelect={handleDepartmentSearch} />

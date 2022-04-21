@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Clean up code">
+      <change afterPath="$PROJECT_DIR$/pages/people/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/searchBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/searchBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/searchBar/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/searchBar/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/text/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/text/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/accordion/AccordionOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/accordion/AccordionOption.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/accordion/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/accordion/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/header/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/results/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/results/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/resultsTile/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/resultsTile/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compositions/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/sidebar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/people/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
