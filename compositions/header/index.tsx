@@ -6,7 +6,7 @@ import Text from 'components/text'
 import SearchBar from 'components/searchBar'
 import Checkbox from 'components/checkbox'
 import { useBreakpoints } from 'utils/useBreakpoints'
-import styles from './style.module.css'
+import style from './style.module.css'
 
 type ChangePayload = {
   searchTerm: string
@@ -19,8 +19,13 @@ interface HeaderProps {
   onFilter: (arg0: ChangePayload) => void
 }
 
-const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
+export default function Header({
+  searchValue,
+  hasAvatarChecked,
+  onFilter,
+}: HeaderProps) {
   const breakpoint = useBreakpoints()
+
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     onFilter({
@@ -36,7 +41,7 @@ const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
     })
 
   return (
-    <Box _as="header" className={styles.headerContainer}>
+    <Box _as="header" className={style.headerContainer}>
       <HStack align={breakpoint !== 'mobile' ? 'center' : 'left'}>
         <VStack align="center" spacing="34px">
           <VStack align="center" spacing="15px">
@@ -44,7 +49,7 @@ const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
               align="center"
               variant="headingLight"
               color="gray4"
-              className={styles.headerTitle}
+              className={style.headerTitle}
             >
               HashiCorp Humans
             </Text>
@@ -69,5 +74,3 @@ const Header = ({ searchValue, hasAvatarChecked, onFilter }: HeaderProps) => {
     </Box>
   )
 }
-
-export default Header

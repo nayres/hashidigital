@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
 import { makeClassName } from 'components/utils'
-import styles from './style.module.css'
+import style from './style.module.css'
 
 type SemanticElements =
   | 'article'
@@ -32,7 +32,7 @@ type BoxProps<BoxElement> = {
 } & HTMLProps<HTMLDivElement> &
   BoxElement
 
-const Box = <BoxElement,>({
+export default function Box<BoxElement>({
   _as = 'div',
   children,
   className,
@@ -43,8 +43,8 @@ const Box = <BoxElement,>({
   padding,
   radius,
   ...props
-}: BoxProps<BoxElement>) => {
-  const getClassNames = makeClassName(styles)
+}: BoxProps<BoxElement>) {
+  const getClassNames = makeClassName(style)
   return (
     <_as
       className={getClassNames('baseBox', className)}
@@ -62,5 +62,3 @@ const Box = <BoxElement,>({
     </_as>
   )
 }
-
-export default Box

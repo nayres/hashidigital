@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { debounce } from 'ts-debounce'
 import { PersonRecord } from 'types'
 
@@ -14,7 +14,7 @@ export const useFilterPeopleByName = (): FilterByPeopleByNameReturnType => {
 
   const filterPeople = useCallback(
     debounce((people: PersonRecord[], searchValue: string) => {
-      if (error) setError(null)
+      setError(null)
       const filteredPeople = people.filter((person: PersonRecord) => {
         if (person?.name) {
           const cleanedName = person.name.toLowerCase()

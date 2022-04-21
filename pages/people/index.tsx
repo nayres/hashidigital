@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
-import { PersonRecord, DepartmentRecord } from 'types'
-import {
-  useFilterPeopleByName,
-  useFilterPeopleByDepartment,
-} from './useFilterPeople'
-import { useBreakpoints } from 'utils/useBreakpoints'
 import BaseLayout from 'layouts/base'
 import Header from 'compositions/header'
 import Box from 'components/box'
@@ -17,6 +11,12 @@ import Sidebar from 'compositions/sidebar'
 import Results from 'compositions/results'
 import ResultTile from 'compositions/resultsTile'
 import query from './query.graphql'
+import { PersonRecord, DepartmentRecord } from 'types'
+import { useBreakpoints } from 'utils/useBreakpoints'
+import {
+  useFilterPeopleByName,
+  useFilterPeopleByDepartment,
+} from './useFilterPeople'
 
 interface Props {
   allPeople: PersonRecord[]

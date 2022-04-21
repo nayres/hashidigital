@@ -3,7 +3,7 @@
   align-items: center;
   border: 1px solid #cfd1d9;
   border-radius: 100px;
-  padding: 14px;
+  padding: 8px 14px;
   width: 33.333%;
 
 & input {
@@ -26,5 +26,9 @@
   height: 20px;
   position: absolute;
   z-index: 1;
+}
+
+@media (max-width: 700px) {
+    width: 100%
 }
 }

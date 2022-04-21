@@ -16,7 +16,12 @@ export default function SearchBar({
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => onChange(event)
 
   return (
-    <div className={style.baseSearchBar}>
+    <div
+      className={style.baseSearchBar}
+      tabIndex={-1}
+      aria-label="search"
+      role="searchbox"
+    >
       <label htmlFor="search-input">
         <SearchIcon />
       </label>
