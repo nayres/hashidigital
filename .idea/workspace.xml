@@ -3,27 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Clean up code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/box/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/box/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/button/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/button/style.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/checkbox/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkbox/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/hStack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hStack/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/searchBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/searchBar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/searchBar/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/searchBar/style.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/text/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/text/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/vStack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/vStack/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/accordion/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/accordion/style.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/results/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/results/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/results/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/results/style.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/resultsTile/FallbackAvatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/resultsTile/FallbackAvatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/resultsTile/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compositions/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/sidebar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/people/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/people/style.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/people/useFilterPeople.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/useBreakpoints.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/useBreakpoints.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650499793233</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Clean up code">
+      <created>1650514583076</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1650514583076</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
