@@ -11,11 +11,11 @@ export default function Results({ children }: { children: ReactNode }) {
       _as="main"
       padding="0 0 2rem 0"
       className={style.resultsBase}
-      width={breakpoint === 'mobile' ? '100%' : '75%'}
+      width={breakpoint === 'mobile' ? '100%' : '80%'}
     >
-      <Box padding="0 0 2rem 0" className={style.resultsScrollable}>
-        <HStack>{children}</HStack>
-      </Box>
+      <HStack>
+        <HStack spacing="2rem">{children}</HStack>
+      </HStack>
     </Box>
   )
 }

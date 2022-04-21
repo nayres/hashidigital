@@ -31,6 +31,7 @@ export default function SearchBar({
         value={searchValue}
         placeholder={label}
         onChange={handleSearch}
+        autoComplete="off"
       />
     </div>
   )

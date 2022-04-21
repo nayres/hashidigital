@@ -29,10 +29,10 @@ export default function ResultsTile({
       width={breakpoint === 'mobile' ? '100%' : '30%'}
       height="100%"
       border="1px solid #C0C0C0"
-      padding="17px 0 0 0"
+      padding="1.063rem 0 0 0"
       {...props}
     >
-      <VStack align="center" spacing="14px">
+      <VStack align="center" spacing="0.875rem">
         <Box radius="100%" className={style.roundImage}>
           {avatar ? (
             <Image

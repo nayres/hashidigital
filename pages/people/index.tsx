@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import rivetQuery from '@hashicorp/platform-cms'
 import { GetStaticPropsResult } from 'next'
 import BaseLayout from 'layouts/base'
-import Header from 'compositions/header'
 import Box from 'components/box'
 import VStack from 'components/vStack'
 import HStack from 'components/hStack'
 import Text from 'components/text'
+import Header from 'compositions/header'
 import Sidebar from 'compositions/sidebar'
 import Results from 'compositions/results'
 import ResultTile from 'compositions/resultsTile'
@@ -17,6 +17,7 @@ import {
   useFilterPeopleByName,
   useFilterPeopleByDepartment,
 } from './useFilterPeople'
+import style from './style.module.css'
 
 interface Props {
   allPeople: PersonRecord[]
@@ -63,34 +64,32 @@ export default function PeoplePage({
         hasAvatarChecked={hasAvatarChecked}
         onFilter={handleFilterChange}
       />
-      <Box padding="2rem 2rem 0 2rem">
+      <Box className={style.peopleContent}>
         <HStack>
           {breakpoint !== 'mobile' && (
             <Sidebar onSearch={handleDepSearch} departments={allDepartments} />
           )}
           <Results>
-            <HStack spacing="32px">
-              {!filterError ? (
-                filteredPeople
-                  .filter((person: PersonRecord) =>
-                    hasAvatarChecked ? person?.avatar !== null : true
-                  )
-                  .map((person) => (
-                    <ResultTile
-                      key={person.id}
-                      avatar={person?.avatar?.url ?? ''}
-                      avatarAlt={person?.avatar?.alt}
-                      name={person?.name ?? 'name'}
-                      title={person?.title ?? 'title'}
-                      department={person?.department?.name ?? 'department'}
-                    />
-                  ))
-              ) : (
-                <Text variant="body" color="gray4" align="center">
-                  {filterError}
-                </Text>
-              )}
-            </HStack>
+            {!filterError ? (
+              filteredPeople
+                .filter((person: PersonRecord) =>
+                  hasAvatarChecked ? person?.avatar !== null : true
+                )
+                .map((person) => (
+                  <ResultTile
+                    key={person.id}
+                    avatar={person?.avatar?.url ?? ''}
+                    avatarAlt={person?.avatar?.alt}
+                    name={person?.name ?? 'name'}
+                    title={person?.title ?? 'title'}
+                    department={person?.department?.name ?? 'department'}
+                  />
+                ))
+            ) : (
+              <Text variant="body" color="gray4" align="center">
+                {filterError}
+              </Text>
+            )}
           </Results>
         </HStack>
       </Box>

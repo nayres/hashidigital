@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import { AppProps } from 'next/app'
+import Head from 'next/head'
 import './style.css'
 import '@hashicorp/platform-util/nprogress/style.css'
 
@@ -18,6 +19,9 @@ function App({ Component, pageProps }: HashiAppProps): React.ReactElement {
   const Layout = Component.layout ?? EmptyLayout
   return (
     <Layout>
+      <Head>
+        <title>HashiCorp Humans</title>
+      </Head>
       <Component {...pageProps} />
     </Layout>
   )

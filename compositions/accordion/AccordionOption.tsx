@@ -7,7 +7,7 @@ import style from './style.module.css'
 interface AccordionOptionProps {
   id: string
   label: string
-  isSelected: boolean | undefined
+  isSelected: boolean
   onSelect: (e: MouseEvent<HTMLInputElement>) => void
   children: ReactNode
 }
@@ -19,16 +19,30 @@ export default function AccordionOption({
   onSelect,
   children,
 }: AccordionOptionProps) {
-  const [isOpen, toggleItemOpen] = useState<boolean | undefined>()
-  const [selected, setSelected] = useState<boolean | undefined>(
-    () => isSelected
-  )
+  const [isOpen, toggleItemOpen] = useState(false)
+  const [selected, setSelected] = useState(false)
 
   useEffect(() => {
     setSelected(isSelected)
   }, [isSelected])
 
   const departmentChildren = Children.toArray(children)
+
+  const handleAccordionLabelClick = (e: MouseEvent<HTMLInputElement>) => {
+    if (isOpen) {
+      toggleItemOpen(!isOpen)
+      return
+    }
+
+    onSelect(e)
+    toggleItemOpen(!isOpen)
+    setSelected(!selected)
+  }
+
+  const handleAccordionLinkClick = (e: MouseEvent<HTMLInputElement>) => {
+    setSelected(!selected)
+    onSelect(e)
+  }
 
   return (
     <>
@@ -40,11 +54,7 @@ export default function AccordionOption({
                 ? `${style.accordionLabel} ${style.selected}`
                 : `${style.accordionLabel}`
             }
-            onClick={(e: MouseEvent<HTMLInputElement>) => {
-              setSelected(!selected)
-              onSelect(e)
-              toggleItemOpen(!isOpen)
-            }}
+            onClick={handleAccordionLabelClick}
             aria-expanded={isOpen}
             aria-selected={selected}
             role="treeitem"
@@ -61,10 +71,7 @@ export default function AccordionOption({
               ? `${style.accordionLink} ${style.selected}`
               : `${style.accordionLink}`
           }
-          onClick={(e: MouseEvent<HTMLInputElement>) => {
-            setSelected(!selected)
-            onSelect(e)
-          }}
+          onClick={handleAccordionLinkClick}
           aria-selected={selected}
           role="treeitem"
         >
