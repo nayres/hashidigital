@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="More accessible/ debuggable accordion">
-      <change afterPath="$PROJECT_DIR$/components/searchBar/SearchIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/searchBar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/searchBar/style.module.css" afterDir="false" />
+    <list default="true" id="43ef2123-c56c-4edf-9dfa-2e9431a61951" name="Changes" comment="Added checkbox">
+      <change afterPath="$PROJECT_DIR$/components/checkbox/CheckboxOffIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/checkbox/CheckboxOnIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/checkbox/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/checkbox/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hStack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hStack/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compositions/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/compositions/header/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +192,9 @@
     <MESSAGE value="Fix silent infinite loop" />
     <MESSAGE value="Add accordion styles" />
     <MESSAGE value="More accessible/ debuggable accordion" />
-    <option name="LAST_COMMIT_MESSAGE" value="More accessible/ debuggable accordion" />
+    <MESSAGE value="Added searchbar" />
+    <MESSAGE value="Added checkbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkbox" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
